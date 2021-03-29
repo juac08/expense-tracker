@@ -8,6 +8,8 @@ import { motion} from "framer-motion";
 function Input() {
     const {data,handleData,handleSubmit } = useGlobalContext();
     return (
+      <div className='login-wrapper'>
+
         <>
  <motion.form className='form-control' noValidate autoComplete="off" initial={{ y: "-300px", opacity: 0 }}
               animate={{ y: 0, opacity: 1,}}
@@ -65,6 +67,7 @@ className='save-btn'
 </motion.form>
             
         </>
+        </div>
     )
 }
 

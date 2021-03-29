@@ -55,7 +55,7 @@ export default function BackToTop(props) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">Expense Tracker</Typography>
+          <Typography variant="h6" style={{margin:'auto'}}>Expense Tracker</Typography>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

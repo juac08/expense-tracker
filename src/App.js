@@ -10,10 +10,16 @@ function App() {
 
   return (
     <>
+    <div className='container'>
     <ScrollTop/>
     {history.length>0 &&  <Chart/>}
     <Items/>
+    </div>
+    <div className='end'>
     <Footer/>
+    </div>
+   
+    
     </>
   );
 }

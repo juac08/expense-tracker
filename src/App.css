@@ -76,7 +76,7 @@
 
 .plus {
     /* border-right: 5px solid green; */
-    border-left: 5px solid green;
+    border-right: 5px solid green;
 }
 
 .minus {
@@ -89,6 +89,7 @@
     text-transform: capitalize;
     border-radius: var(--radius);
     font-family: sans-serif;
+    margin-top: 1rem;
 }
 
 .chart {
@@ -123,6 +124,9 @@
     padding-top: 1rem;
     margin-left: 1rem;
     margin: 0 auto;
+    box-shadow: 0 15px 25px rgba(185, 183, 183, 0.5);
+    background: rgba(139, 136, 136, 0.1);
+    padding: 1rem;
 }
 
 .header {
@@ -133,16 +137,22 @@
     margin: 2rem auto;
     box-shadow: var(--dark-shadow);
     width: 60%;
+    column-gap: 2rem;
+    background-color: rgba(65, 67, 197, 0.1);
+    border-radius: var(--radius);
 }
 
 .footer {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 1rem;
     width: 30%;
     margin: 2rem auto;
     place-items: center;
     transition: var(--transition);
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .footer a:hover {
@@ -152,6 +162,9 @@
 .f {
     text-align: center;
     margin: 0 auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 ul {

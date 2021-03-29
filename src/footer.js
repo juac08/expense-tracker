@@ -40,11 +40,12 @@ const Footer = () => {
               </a>
             </li>
           </div>
+      
         </ul>
 
-        <div>
-          <p className="f">© {date} Junaid, Ahmad.</p>
-        </div>
+
+        <p className="f">© {date} Junaid, Ahmad.</p>
+
       </footer>
     </>
   );

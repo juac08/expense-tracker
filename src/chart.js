@@ -42,7 +42,7 @@ const Chart=()=> {
         transition={{ease:'easeInOut', duration:.5, type: "spring",
   stiffness: 500,
   damping: 30}}>
-         <Doughnut  className='chart' data={data} options={options} />   
+         <Doughnut className='chart' data={data} options={options} />   
         </motion.div>
     )
 }
