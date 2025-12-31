@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 function ScrollTop(props) {
   const { children, window } = props;
   const classes = useStyles();
-    const trigger = useScrollTrigger({
+  const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100,
@@ -53,14 +53,34 @@ export default function BackToTop(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
-        <Toolbar>
-          <Typography variant="h6" style={{margin:'auto'}}>Expense Tracker</Typography>
+      <AppBar
+        position="sticky"
+        elevation={0}
+        className="nav"
+        style={{
+          background: 'rgba(255, 255, 255, 0.9)',
+          backdropFilter: 'blur(10px)',
+          borderBottom: '1px solid rgba(15,23,42,0.06)',
+          color: '#0f172a',
+        }}
+      >
+        <Toolbar className="nav__toolbar">
+          <Typography variant="h6" className="brand">
+            Expense Tracker
+          </Typography>
+          <Typography variant="body2" className="nav__helper">
+            Plan | Log | Stay on budget
+          </Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar id="back-to-top-anchor" />
+      <div id="back-to-top-anchor" className="nav-spacer" />
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab
+          color="secondary"
+          size="small"
+          aria-label="scroll back to top"
+          style={{ background: 'var(--accent)', color: '#0b1120' }}
+        >
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

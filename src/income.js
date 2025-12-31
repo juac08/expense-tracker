@@ -5,27 +5,23 @@ const Income = () => {
   const { total, income, expense } = useGlobalContext();
 
   return (
-    <>
-      <article>
-        <div className="title">
-          <h1 Style={{ background: "black" }}>
-            <span>Your Balance: $ {total}</span>
-          </h1>
-        </div>
-        <div className="underline"></div>
-
-        <div className="header">
-          <div>
-            <h1>Income</h1>
-            <h3 style={{ color: "green" }}>$ {income}</h3>
-          </div>
-          <div>
-            <h1>Expense</h1>
-            <h3 style={{ color: "red" }}>$ {expense}</h3>
-          </div>
-        </div>
-      </article>
-    </>
+    <div className="stat-grid">
+      <div className="stat-card stat-card--balance">
+        <p className="eyebrow">Current balance</p>
+        <h2 className="stat-value">${total}</h2>
+        <p className="muted">Updated in real time</p>
+      </div>
+      <div className="stat-card stat-card--income">
+        <p className="eyebrow">Total income</p>
+        <h2 className="stat-value">${income}</h2>
+        <p className="muted">What you have added</p>
+      </div>
+      <div className="stat-card stat-card--expense">
+        <p className="eyebrow">Total expense</p>
+        <h2 className="stat-value">${expense}</h2>
+        <p className="muted">Includes all negative entries</p>
+      </div>
+    </div>
   );
 };
 
