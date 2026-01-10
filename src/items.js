@@ -24,7 +24,7 @@ const Items = () => {
             Quick add
           </p>
           <h2>New transaction</h2>
-          <p className="muted">Use negative amounts for expenses, positive for income.</p>
+          <p className="muted">Select income or expense, then enter the amount.</p>
         </div>
         <Input />
       </div>

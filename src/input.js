@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import TextField from '@material-ui/core/TextField';
 import { Button, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
@@ -8,6 +8,14 @@ import { motion} from "framer-motion";
 
 function Input() {
     const {data,handleData,handleSubmit, editingId, cancelEdit } = useGlobalContext();
+    const titleInputRef = useRef(null);
+
+    useEffect(() => {
+      if (editingId && titleInputRef.current) {
+        titleInputRef.current.focus();
+        titleInputRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, [editingId]);
     return (
       <motion.form
         className='transaction-form'
@@ -29,6 +37,7 @@ function Input() {
           onChange={handleData}
           placeholder='eg. Coffee with friends'
           fullWidth
+          inputRef={titleInputRef}
         />
         <TextField
           id="outlined-secondary amount"
