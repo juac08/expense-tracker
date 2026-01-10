@@ -70,18 +70,32 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 60px;
-  padding: 0 8px;
+  min-height: 64px;
+  padding: 10px 18px;
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .brand {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   font-weight: 700;
   color: var(--text);
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .nav__helper {
-  color: var(--muted);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  background: rgba(14, 165, 233, 0.1);
 }
 
 .nav-spacer {
@@ -172,6 +186,17 @@ ul {
   letter-spacing: 0.08em;
   font-size: 12px;
   color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.eyebrow__icon {
+  font-size: 16px !important;
+  color: var(--accent);
+  position: relative;
+  top: 1px;
 }
 
 .muted {
@@ -186,8 +211,18 @@ ul {
   box-shadow: var(--shadow-soft);
   min-height: 240px;
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-heading {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+}
+
+.chart-heading .muted {
+  font-size: 12px;
 }
 
 .chart-card {
@@ -256,7 +291,7 @@ ul {
 
 .transaction-form {
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 
 .MuiFormLabel-root {
@@ -294,6 +329,20 @@ ul {
 
 .MuiOutlinedInput-root:hover {
   background: #ffffff;
+}
+
+.MuiSelect-select.MuiSelect-outlined {
+  padding: 16.5px 14px !important;
+  display: flex;
+  align-items: center;
+}
+
+.MuiSelect-select:focus {
+  background: #ffffff !important;
+}
+
+.MuiSelect-icon {
+  right: 12px;
 }
 
 .save-btn.MuiButton-containedPrimary {
@@ -355,6 +404,23 @@ ul {
   margin-left: auto;
   min-width: 100px;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.chip-icon {
+  font-size: 16px !important;
+  position: relative;
+  top: 1px;
+}
+
+.field-icon {
+  font-size: 18px !important;
+  color: var(--muted);
+  display: block;
 }
 
 .transaction-card.is-income .amount-chip {

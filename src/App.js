@@ -3,6 +3,10 @@ import Items from './items';
 import ScrollTop from './navbar';
 import Footer from './footer';
 import Chart from './chart';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import { useGlobalContext } from "./context";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,24 +20,33 @@ function App() {
       <main className="page">
         <section className="hero">
           <div className="hero__copy">
-            <h1 className="hero__title">Track every dollar, celebrate every saving.</h1>
+            <h1 className="hero__title">Track your income.</h1>
             <p className="hero__desc">
               A calmer, more visual dashboard with quick-add controls, a live breakdown, and
               tidy history cards to keep spending transparent.
             </p>
             <div className="hero__stats">
               <div className="hero-stat balance">
-                <p className="eyebrow">Balance</p>
+                <p className="eyebrow">
+                  <AccountBalanceWalletIcon className="eyebrow__icon" />
+                  Balance
+                </p>
                 <h2>{formatCurrency(total)}</h2>
                 <p className="muted">What is left after expenses</p>
               </div>
               <div className="hero-stat income">
-                <p className="eyebrow">Income</p>
+                <p className="eyebrow">
+                  <TrendingUpIcon className="eyebrow__icon" />
+                  Income
+                </p>
                 <h2>{formatCurrency(income)}</h2>
                 <p className="muted">All positive entries</p>
               </div>
               <div className="hero-stat expense">
-                <p className="eyebrow">Expense</p>
+                <p className="eyebrow">
+                  <TrendingDownIcon className="eyebrow__icon" />
+                  Expense
+                </p>
                 <h2>{formatCurrency(expense)}</h2>
                 <p className="muted">All negative entries</p>
               </div>
@@ -41,7 +54,18 @@ function App() {
           </div>
           <div className="hero__viz">
             {history.length > 0 ? (
-              <Chart />
+              <>
+                <div className="chart-heading">
+                  <p className="eyebrow">
+                    <TimelineIcon className="eyebrow__icon" />
+                    Timeline
+                  </p>
+                  <p className="muted">
+                    {history.length} record{history.length === 1 ? "" : "s"}
+                  </p>
+                </div>
+                <Chart />
+              </>
             ) : (
               <div className="chart-placeholder">
                 <p className="eyebrow">Visuals activate after your first entry</p>
